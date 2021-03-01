@@ -33,7 +33,7 @@ public class ReadMoveFiles {
 	}
 	
 	public static void moveFile(File fileEntry) throws IOException {
-		FileHandler handler = new FileHandler("/home/ridhoajibx/Documents/java/FileMove.log", true);        
+        FileHandler handler = new FileHandler("/home/ridhoajibx/Documents/java/FileMove.log", true);        
         logger.addHandler(handler);
         SimpleFormatter formatter = new SimpleFormatter();  
         handler.setFormatter(formatter);
