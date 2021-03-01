@@ -14,7 +14,7 @@ public class ReadMoveFiles {
 	
 	public static void main(String[] args) throws IOException {
 		//1. Source folder
-		final File folder = new File("/home/ridhoajibx/Documents/java/SomeFile/TestMove");
+		final File folder = new File("/home/ridhoajibx/Documents/java/SomeFile");
 		
 		//2. Read all files in folder
 		listFilesForFolder(folder);      
@@ -33,7 +33,7 @@ public class ReadMoveFiles {
 	}
 	
 	public static void moveFile(File fileEntry) throws IOException {
-		FileHandler handler = new FileHandler("/home/ridhoajibx/Documents/java/SomeFile/FileMove.log", true);        
+		FileHandler handler = new FileHandler("/home/ridhoajibx/Documents/java/FileMove.log", true);        
         logger.addHandler(handler);
         SimpleFormatter formatter = new SimpleFormatter();  
         handler.setFormatter(formatter);
@@ -41,7 +41,7 @@ public class ReadMoveFiles {
         logger.info("start");
         
 		Path source = Paths.get(fileEntry.getPath());
-		Path target = Paths.get("/home/ridhoajibx/Documents/java/SomeFile/Move/" + fileEntry.getName());
+		Path target = Paths.get("/home/ridhoajibx/Documents/java/DestFile/" + fileEntry.getName());
 		if(fileEntry.getName().endsWith(".pdf") || fileEntry.getName().endsWith(".xlxs")) {
 			try {
 				Files.move(source, target);
